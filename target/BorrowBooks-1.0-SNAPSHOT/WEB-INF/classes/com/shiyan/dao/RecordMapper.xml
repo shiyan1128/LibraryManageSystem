@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiyan.dao.RecordMapper">
+    <insert id="addRecord">
+        insert into record(record_id,record_bookname,record_bookisbn,record_borrower,record_borrowtime,record_returntime)
+        values (#{id},#{bookname},#{bookisbn},#{borrower},#{borrowTime},#{returnTime})
+    </insert>
+    
+    <resultMap id="recordMap" type="com.shiyan.domain.Record">
+        <id property="id" column="record_id"/>
+        <result property="bookname" column="record_bookname"/>
+        <result property="bookisbn" column="record_bookisbn"/>
+        <result property="borrower" column="record_borrower"/>
+        <result property="borrowTime" column="record_borrowtime"/>
+        <result property="returnTime" column="record_returntime"/>
+    </resultMap>
+    <select id="searchRecords" resultMap="recordMap">
+        SELECT * FROM record
+        where 1=1
+        <if test="borrower != null">AND record_borrower like  CONCAT('%',#{borrower},'%')</if>
+        <if test="bookname != null">AND record_bookname  like  CONCAT('%',#{bookname},'%') </if>
+        order by record_returntime DESC
+    </select>
+</mapper>

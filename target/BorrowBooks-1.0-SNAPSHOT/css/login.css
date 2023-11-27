@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.loginmanage{
+    padding-top: 100px;
+    height: 650px;
+    background-image: url("/img/head.png");
+    background-repeat: no-repeat;
+}
+.py-container{
+    background-color: #f6d6f6;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 80px ;
+    height:400px;
+    width: 500px;
+    border-radius: 100px/90px;
+}
+h4{
+    font-size:30px;
+    font-weight:700;
+    margin:20px  5px;
+    line-height:30px;
+    text-align: center;
+}
+h3{
+    font-size:24px;
+    margin:20px 0;
+    font-family:inherit;
+    font-weight:700;
+    line-height:24px;
+    color:inherit;
+    text-rendering:optimizelegibility;
+}
+
+.active{
+    list-style: none;
+}
+.input-prepend,input{
+    font-size:15px;
+    line-height:30px;
+    margin-top: 10px;
+}
+.loginpwd{
+    letter-spacing: .4pc;
+}
+.logined{
+    font-size:18px;
+    line-height:30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 30px;
+    width: 100px;
+    background-color: aqua;
+    border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
